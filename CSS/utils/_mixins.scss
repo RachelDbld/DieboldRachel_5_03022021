@@ -1,0 +1,82 @@
+@mixin h1{
+    font-size: 24px;
+	font-family: 'Finger Paint', cursive;
+}
+
+@mixin h2{
+    font-family: 'Finger Paint', cursive;
+	font-weight: 500;
+	font-size: 22px
+}
+
+@mixin h3{
+    font-family: 'Montserrat', sans-serif;
+	font-weight: 500;
+	font-size: 28px;
+}
+
+@mixin p{
+    font-family: 'Montserrat', sans-serif;
+	font-weight: 500;
+	font-size: 18px;
+}
+
+@mixin button {
+	width: 90%;
+	font-family: 'Montserrat', sans-serif;
+	border: 6px double $secondary-color;
+	background-color: $primary-color;
+	font-weight: 500;
+	font-size: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 15px 0px;
+	padding: 10px;
+
+	/*&:hover{
+		background-color: $tertiary-color;
+		transform: scale(1.1);
+		transition: 0.8s;
+	}*/
+}
+
+@mixin mediadesktop{
+    body{
+		background-color: $primary-color;
+    }
+
+    #container{
+        width:1000px;
+        background-color: white;
+        border: 1px $secondary-color solid;
+    }
+}
+
+@mixin mediatablette{
+	#mainDiv img{
+		width:400px;
+	}
+}
+
+@mixin mediamobile{
+	#mainDiv img{
+		width:200px;
+	}
+
+	h1{
+		font-size: 20px;
+	}
+	
+	h2{
+		font-size: 18px
+	}
+	
+	h3{
+		font-size: 24px;
+	}
+	
+	p{
+		font-size: 15px;
+	}
+}
