@@ -4,14 +4,14 @@ const urlParams = new URLSearchParams(queryString); //analyse des paramètres d'
 const product = urlParams.get('productid') //récupérer la valeur (id des produits) du paramètre "produits"
 
 
-function isInTheCart (product, addLocalStorage) {
-    for (let product of addLocalStorage) {
-      if (product <= 1) {
-          return true
+function isInTheCart (product, probableContenuPanier) { //fonction devant parcourir le localstorage afin de repérer les produits ajoutés
+    for (let product of probableContenuPanier) { //boucle qui parcours les id produit étant ds le localstorage
+      if (product === 1) { // si le localstorage contient un produit alors 
+          return true //retourne que la condition est vraie
       }
       //console.log('cet article a déjà été ajouté au panier');
     }
-    return false
+    return false //si il n'y a rien, retourne faux
 }
 
 //CREATION DE LA PAGE PRODUIT
@@ -83,16 +83,17 @@ function creationPageNounours(nounours) {
     envoyerAuPanier.addEventListener('click', (event)=>{
         
 
-        let probableContenuPanier = []
+        let probableContenuPanier = [] //création de la variable
+        //(probableContenuPanier));
         event.preventDefault(); //permet de ne pas réactualiser la page lors de l'ajout au panier
-        isInTheCart()
+        //isInTheCart() //execution de la fonction créée plus haut
         console.log(`${product} vient d'être commandé 1 fois en ${idFormulaire.value}`);
         //permet d'afficher la sélection du client
         let addLocalStorage = { color : idFormulaire.value, quantity : 1}
-        console.log(Object.keys(addLocalStorage));
+        //console.log(Object.keys(addLocalStorage));
         probableContenuPanier.push(addLocalStorage)
-        localStorage.setItem(product, JSON.stringify(probableContenuPanier)) //stringify = convertir un objet qui n'est pas une string en string
-
+        localStorage.setItem(product, JSON.stringify(probableContenuPanier)) //ajouts du tableau ds le localstorage
+        
         const optionProduit = {
             "5be9c8541c9d440000665243": [
                 {
@@ -162,7 +163,6 @@ function creationPageNounours(nounours) {
             ]
         }
         //console.log(optionProduit);
-
     })
 }
 
