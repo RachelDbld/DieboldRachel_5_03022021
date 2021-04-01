@@ -12,33 +12,100 @@
 @mixin h3{
     font-family: 'Montserrat', sans-serif;
 	font-weight: 500;
-	font-size: 28px;
+	font-size: 18px;
 }
 
 @mixin p{
     font-family: 'Montserrat', sans-serif;
 	font-weight: 500;
-	font-size: 18px;
+	font-size: 14px;
 }
 
-@mixin button {
-	width: 90%;
-	font-family: 'Montserrat', sans-serif;
-	border: 6px double $secondary-color;
+@mixin header{    //HORS HEADER PRINCIPAL PAGE D'ACCUEIL
+	height: 150px;
+    padding: 20px;
 	background-color: $primary-color;
-	font-weight: 500;
-	font-size: 20px;
 	display: flex;
+	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	margin: 15px 0px;
-	padding: 10px;
 
-	/*&:hover{
-		background-color: $tertiary-color;
-		transform: scale(1.1);
-		transition: 0.8s;
-	}*/
+	i{
+		font-size: 24px
+	}
+
+	a:hover{
+		background-image: linear-gradient(to left, #8f5bfe, #e58a0c);   
+		-webkit-background-clip: text;
+		-moz-background-clip: text;
+		color: transparent;
+	}
+
+    .accueil{
+        width: 100%;
+        text-decoration: none;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .fa-arrow-left{
+            font-size: 25px;
+            margin-right: 50px;
+            color: #fff;
+            background-color: $secondary-color;
+            padding: 5px;
+            border-radius: 25px;
+    
+            &:hover{
+                background-image: linear-gradient(to right, #8f5bfe, #e58a0c);   
+                -webkit-background-clip: text;
+                -moz-background-clip: text;
+                color: transparent;
+            }
+        }
+    }
+
+	#logo{
+		height: 100px;
+	}
+}
+
+@mixin panier{
+		font-size: 18px;
+		text-decoration: none;
+		display: flex;
+		justify-content: flex-end;
+		flex-direction: row;
+		align-items: center;
+		background-color: $secondary-color;
+		padding: 15px;
+		border-radius: 30px;
+		color: #fff;
+	
+		h3{
+			margin-right: 10px;
+		}
+}
+
+@mixin cartButton{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	transform: scale(1);
+	transition: transform 0.8s;
+	border-radius: 0.25em;
+    padding: 5px;
+    cursor: pointer;
+    background-color: $tertiary-color;
+    box-shadow: 5px 5px 5px 0px lighten($color: $secondary-color, $amount: 30);
+    border: solid 2px $primary-color;
+
+	&:hover{
+		transform: scale(1.03);
+		transition: transform 0.8s;
+	}
 }
 
 @mixin mediadesktop{
@@ -57,11 +124,47 @@
 	#mainDiv img{
 		width:400px;
 	}
+
+	header{
+		flex-direction: column;
+		align-items: flex-start;
+
+		.panier{
+			justify-content: flex-start;
+			margin: 15px 0px 0px 0px;
+		}
+
+		#logo{
+			height: 80px;
+		}
+	}
+}
+
+@mixin mediatabletteProducts{
+	#mainDiv{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 20px;
+		}
+	
+		#secondaryDiv{
+			margin: 20px;
+		}
+	
+		#photo{
+			align-self: center;
+		}
 }
 
 @mixin mediamobile{
-	#mainDiv img{
+	#mainDiv {
+		margin: 10px;
+	
+		img{
 		width:200px;
+		}
 	}
 
 	h1{
@@ -72,11 +175,49 @@
 		font-size: 18px
 	}
 	
-	h3{
-		font-size: 24px;
-	}
-	
 	p{
 		font-size: 15px;
+	}
+
+	header{
+		flex-direction: column;
+		align-items: flex-start;
+
+		.panier{
+			justify-content: flex-start;
+			margin: 15px 0px 0px 0px;
+		}
+
+		#logo{
+			height: 80px;
+		}
+	}
+}
+
+@mixin mediamobileProducts{
+	#mainDiv{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 5px;
+		}
+
+	#secondaryDiv{
+		margin: 20px;
+	}
+
+	#photo{
+		width: 200px;
+		align-self: center;
+	}
+
+	#prix{
+		font-size: 17px;
+		margin-left: 7px;
+	}
+
+	#cartButton h3{
+		font-size: 12px;
 	}
 }

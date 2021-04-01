@@ -70,18 +70,15 @@ h2 {
 h3 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
-  font-size: 28px;
+  font-size: 18px;
 }
 
 p {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 14px;
 }
 
-/*#bouton{
-	@include button
-}*/
 #container {
   margin: auto;
 }
@@ -90,9 +87,34 @@ header {
   height: 150px;
   padding: 20px;
   background-color: #f3e9f1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-header a {
+header i {
+  font-size: 24px;
+}
+
+header a:hover {
+  background-image: -webkit-gradient(linear, right top, left top, from(#8f5bfe), to(#e58a0c));
+  background-image: linear-gradient(to left, #8f5bfe, #e58a0c);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  color: transparent;
+}
+
+header .accueil {
   width: 100%;
   text-decoration: none;
   display: -webkit-box;
@@ -105,21 +127,18 @@ header a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
 }
 
-header a i {
+header .accueil .fa-arrow-left {
   font-size: 25px;
   margin-right: 50px;
-  color: #000;
+  color: #fff;
   background-color: #c77961;
   padding: 5px;
   border-radius: 25px;
 }
 
-header a i:hover {
+header .accueil .fa-arrow-left:hover {
   background-image: -webkit-gradient(linear, left top, right top, from(#8f5bfe), to(#e58a0c));
   background-image: linear-gradient(to right, #8f5bfe, #e58a0c);
   -webkit-background-clip: text;
@@ -146,28 +165,4 @@ footer {
     border: 1px #c77961 solid;
   }
 }
-
-@media only screen and (min-width: 521px) and (max-width: 720px) {
-  #mainDiv img {
-    width: 400px;
-  }
-}
-
-@media only screen and (max-width: 520px) {
-  #mainDiv img {
-    width: 200px;
-  }
-  h1 {
-    font-size: 20px;
-  }
-  h2 {
-    font-size: 18px;
-  }
-  h3 {
-    font-size: 24px;
-  }
-  p {
-    font-size: 15px;
-  }
-}
-/*# sourceMappingURL=style2.css.map */
+/*# sourceMappingURL=cart_style.css.map */

@@ -72,47 +72,96 @@ p{
 	@include p
 }
 
-/*#bouton{
-	@include button
-}*/
-
 #container{
 	margin: auto;
 }
 
 header{
-	height: 150px;
-    padding: 20px;
-	background-color: $primary-color;
+	@include header;
 
-    a{
-        width: 100%;
-        text-decoration: none;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-start;
-
-        i{
-            font-size: 25px;
-            margin-right: 50px;
-            color: #000;
-            background-color: $secondary-color;
-            padding: 5px;
-            border-radius: 25px;
-    
-            &:hover{
-                background-image: linear-gradient(to right, #8f5bfe, #e58a0c);   
-                -webkit-background-clip: text;
-                -moz-background-clip: text;
-                color: transparent;
-            }
-        }
-    }
-
-	#logo{
-		height: 100px;
+	i{
+		font-size: 24px
 	}
+
+	a:hover{
+		background-image: linear-gradient(to left, #8f5bfe, #e58a0c);   
+		-webkit-background-clip: text;
+		-moz-background-clip: text;
+		color: transparent;
+	}
+}
+
+.panier{
+	font-size: 18px;
+	text-decoration: none;
+	display: flex;
+	justify-content: flex-end;
+    flex-direction: row;
+    align-items: center;
+	background-color: $secondary-color;
+	padding: 15px;
+	border-radius: 30px;
+	color: #fff;
+
+	h3{
+		margin-right: 10px;
+	}
+}
+
+#mainDiv{
+	margin: 30px;
+	border: 6px double $secondary-color;
+	display: flex;
+	align-items: center;
+	padding: 20px;
+}
+#photo{
+	width: 400px;
+	object-fit: cover;
+	object-position: center;
+	box-shadow: 5px 5px 5px 0px lighten($color: $secondary-color, $amount: 30);
+	border: solid 2px #f3e9f1;
+	border-radius: 400px;
+	margin: 10px;
+}
+
+#secondaryDiv{
+	display: flex;
+	flex-direction: column;
+	margin-left: 20px;
+}
+
+#nom{
+	margin: 0px 0px 30px;
+	text-align: center
+}
+
+#description{
+	margin-bottom: 30px;
+}
+
+#titreSelect{
+	margin-bottom: 10px;
+}
+
+#menuDeroulant{
+  @include p;
+  width: 100%;
+  border-radius: 0.25em;
+  padding: 5px;
+  cursor: pointer;
+  background-color: $primary-color;
+  box-shadow: 5px 5px 5px 0px lighten($color: $secondary-color, $amount: 30);
+  border: solid 2px $primary-color;
+  margin-bottom: 40px;
+}
+
+#prix{
+	margin-left: 10px;
+}
+
+#cartButton{
+	@include cartButton;
 }
 
 footer{
@@ -124,10 +173,18 @@ footer{
 	@include mediadesktop;
 }
 
-@media only screen and (min-width: 521px) and (max-width: 720px){
+@media only screen and (min-width: 521px) and (max-width: 770px){
+
 	@include mediatablette;
+	
+	@include mediatabletteProducts;
+
 }
 
 @media only screen and (max-width: 520px){
+
 	@include mediamobile;
+
+	@include mediamobileProducts;
+
 }

@@ -150,6 +150,18 @@ header #logo {
   height: 100px;
 }
 
+header i {
+  font-size: 24px;
+}
+
+header a:hover {
+  background-image: -webkit-gradient(linear, right top, left top, from(#8f5bfe), to(#e58a0c));
+  background-image: linear-gradient(to left, #8f5bfe, #e58a0c);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  color: transparent;
+}
+
 .panier {
   font-size: 18px;
   text-decoration: none;
@@ -176,33 +188,32 @@ header #logo {
   margin-right: 10px;
 }
 
-#listeProduits {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  padding: 10px;
-}
-
 #mainDiv {
   margin: 30px;
   border: 6px double #c77961;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
 }
 
-#mainDiv a {
-  text-decoration: none;
-  color: #000;
+#photo {
+  width: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  -webkit-box-shadow: 5px 5px 5px 0px #efd9d2;
+          box-shadow: 5px 5px 5px 0px #efd9d2;
+  border: solid 2px #f3e9f1;
+  border-radius: 400px;
+  margin: 10px;
+}
+
+#secondaryDiv {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -210,6 +221,50 @@ header #logo {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-left: 20px;
+}
+
+#nom {
+  margin: 0px 0px 30px;
+  text-align: center;
+}
+
+#description {
+  margin-bottom: 30px;
+}
+
+#titreSelect {
+  margin-bottom: 10px;
+}
+
+#menuDeroulant {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  width: 100%;
+  border-radius: 0.25em;
+  padding: 5px;
+  cursor: pointer;
+  background-color: #f3e9f1;
+  -webkit-box-shadow: 5px 5px 5px 0px #efd9d2;
+          box-shadow: 5px 5px 5px 0px #efd9d2;
+  border: solid 2px #f3e9f1;
+  margin-bottom: 40px;
+}
+
+#prix {
+  margin-left: 10px;
+}
+
+#cartButton {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -222,104 +277,22 @@ header #logo {
   transition: -webkit-transform 0.8s;
   transition: transform 0.8s;
   transition: transform 0.8s, -webkit-transform 0.8s;
-  position: relative;
+  border-radius: 0.25em;
+  padding: 5px;
+  cursor: pointer;
+  background-color: #c0a4d2;
+  -webkit-box-shadow: 5px 5px 5px 0px #efd9d2;
+          box-shadow: 5px 5px 5px 0px #efd9d2;
+  border: solid 2px #f3e9f1;
 }
 
-#mainDiv a:hover {
-  opacity: 0.8;
+#cartButton:hover {
   -webkit-transform: scale(1.03);
           transform: scale(1.03);
   -webkit-transition: -webkit-transform 0.8s;
   transition: -webkit-transform 0.8s;
   transition: transform 0.8s;
   transition: transform 0.8s, -webkit-transform 0.8s;
-}
-
-#mainDiv img {
-  width: 500px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
-  -webkit-box-shadow: 5px 5px 5px 0px #efd9d2;
-          box-shadow: 5px 5px 5px 0px #efd9d2;
-  border: solid 2px #f3e9f1;
-  border-radius: 500px;
-  margin-top: 20px;
-}
-
-.searchDiv {
-  width: 95%;
-  height: 95%;
-  color: transparent;
-  font-size: 50px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: absolute;
-  -ms-flex-item-align: center;
-      align-self: center;
-}
-
-.searchDiv:hover {
-  color: #000;
-  background-color: #f3e9f1;
-  opacity: 0.8;
-  -webkit-box-shadow: 10px 10px 50px 10px #f3e9f1;
-          box-shadow: 10px 10px 50px 10px #f3e9f1;
-}
-
-#secondaryDiv {
-  width: 90%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 30px 0px 20px 0px;
-}
-
-#nom {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  border-bottom-style: inset;
-  border-left-style: inset;
-  border-color: #c0a4d2;
-  border-width: 3px;
-  padding: 10px;
-}
-
-#prix {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  background-color: #c77961;
-  padding: 10px;
-  border-radius: 40px;
-}
-
-#description {
-  width: 90%;
-  margin: 20px 0px;
 }
 
 footer {
@@ -338,7 +311,7 @@ footer {
   }
 }
 
-@media only screen and (min-width: 521px) and (max-width: 720px) {
+@media only screen and (min-width: 521px) and (max-width: 770px) {
   #mainDiv img {
     width: 400px;
   }
@@ -359,6 +332,30 @@ footer {
   }
   header #logo {
     height: 80px;
+  }
+  #mainDiv {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 20px;
+  }
+  #secondaryDiv {
+    margin: 20px;
+  }
+  #photo {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
   }
 }
 
@@ -396,5 +393,37 @@ footer {
   header #logo {
     height: 80px;
   }
+  #mainDiv {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 5px;
+  }
+  #secondaryDiv {
+    margin: 20px;
+  }
+  #photo {
+    width: 200px;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  #prix {
+    font-size: 17px;
+    margin-left: 7px;
+  }
+  #cartButton h3 {
+    font-size: 12px;
+  }
 }
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=products_style.css.map */

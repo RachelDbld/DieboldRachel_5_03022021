@@ -8,24 +8,17 @@ function creationDesElements(nounourses) {
         let mainDiv = document.createElement('div')
         mainDiv.setAttribute("id", "mainDiv")
 
-        let teddiesLink = document.createElement('a')
-        teddiesLink.setAttribute("href", elem._id)
-        mainDiv.appendChild(teddiesLink)
+        let lienNounours = document.createElement('a')
+        lienNounours.setAttribute("href", `produits.html?productid=${elem._id}`)
+        mainDiv.appendChild(lienNounours)
 
-        let productLink = document.createElement('div')
-        productLink.setAttribute("id", "productLink")
-        teddiesLink.appendChild(productLink)
+        let searchDiv = document.createElement('div')
+        searchDiv.setAttribute("class", "searchDiv")
+        lienNounours.appendChild(searchDiv)
 
-        let searchIcon = document.createElement('div')
-        searchIcon.setAttribute("class", "searchIcone")
-        productLink.appendChild(searchIcon)
-
-        /*let icon = document.createElement('i')
-        icon.setAttribute("class", "fas fa-search SearchFormBtnIcon")
-        searchIcon.appendChild("icon")*/
-
-        //let searchIcon = document.getElementsByClassName('fas fa-search SearchFormBtnIcon')
-
+        let searchIcon = document.createElement('i')
+        searchIcon.setAttribute("class", "fas fa-search SearchFormBtnIcon")
+        searchDiv.appendChild(searchIcon)
 
         let secondaryDiv = document.createElement('div')
         secondaryDiv.setAttribute("id", "secondaryDiv")
@@ -33,7 +26,8 @@ function creationDesElements(nounourses) {
         let img = document.createElement('img')
         img.setAttribute("src", elem.imageUrl)
         img.setAttribute("id", "photo")
-        teddiesLink.appendChild(img)
+        img.setAttribute("alt", "photo du Teddy")
+        lienNounours.appendChild(img)
 
         let nomNounours = document.createElement('h1')
         nomNounours.setAttribute("id", "nom")
@@ -45,17 +39,12 @@ function creationDesElements(nounourses) {
         prixNounours.setAttribute("id", "prix")
         secondaryDiv.appendChild(prixNounours)
 
-        teddiesLink.appendChild(secondaryDiv)
+        lienNounours.appendChild(secondaryDiv)
 
-        let descriptionNounours = document.createElement('p')
+        let descriptionNounours = document.createElement('h3')
         descriptionNounours.innerText = elem.description
         descriptionNounours.setAttribute("id", "description")
-        teddiesLink.appendChild(descriptionNounours)
-
-        /*let boutonLienProduit = document.createElement('button')
-        boutonLienProduit.innerText = "Voir produit"
-        boutonLienProduit.setAttribute("id", "bouton")
-        mainDiv.appendChild(boutonLienProduit)*/
+        lienNounours.appendChild(descriptionNounours)
 
         ancre.appendChild(mainDiv)
     }

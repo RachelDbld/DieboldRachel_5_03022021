@@ -72,26 +72,18 @@ p{
 	@include p
 }
 
-/*#bouton{
-	@include button
-}*/
-
 #container{
 	margin: auto;
 }
 
 header{
-	height: 150px;
-	background-color: $primary-color;
-	display: flex;
-	justify-content: flex-start;
-	padding: 20px;
-
-	#logo{
-		height: 100px;
-		align-self: center;
-	}
+	@include header
 }
+
+.panier{
+	@include panier
+}
+
 
 #listeProduits{
 	display: flex;
@@ -135,31 +127,41 @@ header{
 	}
 }
 
-#productLink{
-	display: flex;
-	justify-content: center;
-	align-content: center;
-	width:95%;
-	height: 95%;
-	position: absolute;
-	z-index: 1;
-	.searchicone{
-		color: transparent;
-		position: absolute;
-		align-self: center;
-		padding: 50px 100px;
-		z-index: 2;
-		
-		&:hover{
-			color: #000;
-			background-color: $primary-color;
-		}
+.searchDiv{
+	width: 95%;
+    height: 95%;
+	color: transparent;
+	font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+	align-self: center;
+
+	&:hover{
+		color: #000;
+		background-color: $primary-color;
+		opacity: 0.8;
+		box-shadow: 10px 10px 50px 10px $primary-color;
 	}
+}
+
+#secondaryDiv{
+	width: 90%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 30px 0px 20px 0px;
 }
 
 #nom{
 	display: flex;
 	flex-direction: row;
+	border-bottom-style: inset;
+	border-left-style: inset;
+	border-color: $tertiary-color;
+	border-width: 3px;
+	padding: 10px;
 }
 
 #prix{
@@ -171,16 +173,8 @@ header{
 	
 }
 
-#secondaryDiv{
-	width: 95%;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 30px 0px 20px 0px;
-}
-
 #description{
-	width: 95%;
+	width: 90%;
 	margin: 20px 0px;
 }
 
@@ -199,4 +193,5 @@ footer{
 
 @media only screen and (max-width: 520px){
 	@include mediamobile;
+	
 }
